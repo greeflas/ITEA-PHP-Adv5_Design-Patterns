@@ -11,7 +11,8 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": ">=7.3"
+    "php": ">=7.3",
+    "symfony/yaml": "^4.2"
   },
   "autoload": {
     "psr-4": {
