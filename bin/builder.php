@@ -18,3 +18,12 @@ $builder->from('profile');
 $sql = $builder->getQuery();
 
 var_dump($sql);
+
+$sql = (new SqlQueryBuilder())
+    ->select(['email', 'username'])
+    ->from('user')
+    ->where('status = 3')
+    ->getQuery()
+;
+
+var_dump($sql);

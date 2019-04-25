@@ -15,16 +15,22 @@ final class SqlQueryBuilder
         } else {
             $this->fields = $fields;
         }
+
+        return $this;
     }
 
     public function from($table)
     {
         $this->table = $table;
+
+        return $this;
     }
 
     public function where($conditions)
     {
         $this->conditions = $conditions;
+
+        return $this;
     }
 
     public function getQuery()
