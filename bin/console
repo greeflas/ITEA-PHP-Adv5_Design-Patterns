@@ -12,5 +12,14 @@ var_dump($s1->getId());
 //var_dump($s2->getId());
 
 $serialized = \serialize($s1);
-$s3 = \unserialize($serialized);
-var_dump($s3->getId());
+//$s3 = \unserialize($serialized);
+//var_dump($s3->getId());
+
+$createNewInstance = function () {
+    return new self();
+};
+
+$newInstanceClosure = Closure::bind($createNewInstance, $s1, Singleton::class);
+$s4 =$newInstanceClosure();
+
+var_dump($s4->getId());
